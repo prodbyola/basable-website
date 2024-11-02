@@ -1,3 +1,5 @@
+'use client'
+
 import "./Header.scss";
 import X from "./assets/X.svg";
 import Logo from "./assets/logo.svg";

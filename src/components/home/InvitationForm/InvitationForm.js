@@ -1,6 +1,6 @@
 import React from "react";
 import "./InvitationForm.scss";
-import bg from "../InvitationForm/assets/images/bg.png";
+import bg from "./assets/images/bg.png";
 import "./InvitationForm.scss";
 
 function InvitationForm() {

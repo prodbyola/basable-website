@@ -1,25 +1,19 @@
 import React from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Benefit from "./components/Benefit";
-import Features from "./components/Features/Features";
-import Footer from "./components/footer";
-import Contact from "./components/contact";
-import { Analytics } from "@vercel/analytics/react";
+import Hero from "./components/home/Hero";
+import Benefit from "./components/home/Benefit";
+import Features from "./components/home/Features/Features";
+import Contact from "./components/home/contact";
 
-import InvitationForm from "./components/InvitationForm/InvitationForm";
+import InvitationForm from "./components/home/InvitationForm/InvitationForm";
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
       <Hero />
       <Features />
       <Benefit />
       <InvitationForm />
       <Contact />
-      <Footer />
-      <Analytics />
     </div>
   );
 };

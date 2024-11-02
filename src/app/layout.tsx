@@ -1,5 +1,8 @@
 import "../App.css";
 import type { Metadata } from 'next'
+import Header from "../components/common/Header";
+import Footer from "../components/common/footer";
+import { Analytics } from "@vercel/analytics/react";
  
 export const metadata: Metadata = {
   title: 'Basable — Free Data Management and Visualization Software',
@@ -15,7 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div id="root">{children}</div>
+        <div id="root">
+          <Header />
+          {children}
+          <Footer />
+          <Analytics />
+          </div>
       </body>
     </html>
   );

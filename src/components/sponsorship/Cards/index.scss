@@ -1,0 +1,15 @@
+.sponsorshipCardList {
+    display: flex;
+    margin-top: 52px;
+    justify-content: space-between;
+
+    .sponsorshipCard {
+        width: 24.4%;
+        padding: 34px 38px;
+
+        .cardTitle {
+            text-align: center;
+            font-size: 1.82rem;
+        }
+    }
+}
