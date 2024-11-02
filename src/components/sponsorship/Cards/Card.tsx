@@ -1,11 +1,42 @@
-import { Card } from "@mui/material"
+import { Button, Card } from "@mui/material";
+import CheckIcon from "./CheckIcon";
+import { TierDetail } from ".";
 
-const TierCard = () => {
-    return (
-        <Card className="sponsorshipCard">
-            <h3 className="cardTitle">Bronze</h3>
-        </Card>
-    )
-}
+const TierCard = ({ tier }: { tier: TierDetail }) => {
+  const isDonation = tier.name === "Donation";
 
-export default TierCard
+  return (
+    <Card className="sponsorshipCard">
+      <h3 className="cardTitle">{tier.name}</h3>
+      {isDonation ? (
+        <p className="tierPricing">
+          Make a custom one-time or recurring contribution.
+        </p>
+      ) : (
+        <p className="tierPricing">
+          <span className="pricingMain">${tier.fee} </span>USD / month
+        </p>
+      )}
+      <div className="cardFooter">
+        <Button variant="contained" className="cardFooterBtn" size="large">
+          {isDonation ? "One-Time Donation" : "Contribute"}
+        </Button>
+        {isDonation && (
+          <Button variant="contained" className="cardFooterBtn" size="large">
+            Recurring Donation
+          </Button>
+        )}
+      </div>
+      <div className="tierBenefits">
+        {tier.benefits.map((offer) => (
+          <div className="benefit" key={offer}>
+            <CheckIcon />
+            <p>{offer}</p>
+          </div>
+        ))}
+      </div>
+    </Card>
+  );
+};
+
+export default TierCard;

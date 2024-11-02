@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
 import "./Header.scss";
 import X from "./assets/X.svg";
 import Logo from "./assets/logo.svg";
-import Image from 'next/image';
+import Image from "next/image";
 import React, { useState } from "react";
 import { Navlist } from "../Nav/Navlist";
 import Github from "./assets/Github.svg";
@@ -100,7 +100,6 @@ const Header = () => {
               <Link
                 onClick={() => {
                   setActiveLink(section.link);
-                  console.log(activeLink);
                   setMenuOpen(!menuOpen);
                 }}
                 key={section.id}
@@ -109,17 +108,16 @@ const Header = () => {
                 href={`#${section.id}`}
               >
                 <ListItem
-                  href={`#${section.id}`}
                   sx={{
                     paddingBottom: "24px",
                     paddingTop: "24px",
-                    textTransform: 'capitalize'
+                    textTransform: "capitalize",
                   }}
                   className={
                     activeLink === section.link ? classes.active : null
                   }
                 >
-                  {section.id}
+                  <a href={`#${section.id}`}>{section.id}</a>
                 </ListItem>
               </Link>
             ))}
@@ -133,7 +131,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-            <img src={LinkedIn.src} alt="GitHub" className={classes.icon} />
+              <img src={LinkedIn.src} alt="GitHub" className={classes.icon} />
             </a>
             <a
               href="https://www.twitter.com"
