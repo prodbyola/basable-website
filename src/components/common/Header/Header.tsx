@@ -14,6 +14,7 @@ import { HeaderButtons } from "../Nav/Buttons";
 import HamburgerIcon from "./assets/Hamburger.png";
 import { Divider, Link, List, ListItem } from "@mui/material";
 import { LogoSvg } from "./assets/ActionLogo";
+import { useRouter } from "next/navigation";
 
 const drawerWidth = 240;
 const useStyles = makeStyles(() => {
@@ -72,6 +73,9 @@ const useStyles = makeStyles(() => {
 });
 
 const Header = () => {
+  const router = useRouter();
+  const goHome = () => router.push("/");
+
   const [activeLink, setActiveLink] = useState("about");
   const [menuOpen, setMenuOpen] = useState(false);
   const sections = [
@@ -91,7 +95,7 @@ const Header = () => {
           anchor="right"
           classes={{ paper: classes.drawerPaper }}
         >
-          <div className={classes.logo}>
+          <div className={classes.logo} onClick={goHome}>
             <LogoSvg />
           </div>
 
@@ -149,7 +153,14 @@ const Header = () => {
             </a>
           </div>
         </Drawer>
-        <Image priority src={Logo} alt="Logo" className="logo" />
+        <Image
+          priority
+          src={Logo}
+          alt="Logo"
+          className="logo"
+          onClick={goHome}
+          style={{ cursor: "pointer" }}
+        />
         <div className="nav-m">
           <Navlist />
         </div>
