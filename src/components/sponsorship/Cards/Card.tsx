@@ -1,9 +1,13 @@
+'use client'
+
 import { Button, Card } from "@mui/material";
 import CheckIcon from "./CheckIcon";
 import { TierDetail } from ".";
 
+
 const TierCard = ({ tier }: { tier: TierDetail }) => {
   const isDonation = tier.name === "Donation";
+  const openLink = (link: string) => window.open(link, "_blank")
 
   return (
     <Card className="sponsorshipCard">
@@ -18,14 +22,10 @@ const TierCard = ({ tier }: { tier: TierDetail }) => {
         </p>
       )}
       <div className="cardFooter">
-        <Button variant="contained" className="cardFooterBtn" size="large">
+        <Button variant="contained" className="cardFooterBtn" size="large" onClick={ () => openLink(tier.link) }>
           {isDonation ? "One-Time Donation" : "Contribute"}
         </Button>
-        {isDonation && (
-          <Button variant="contained" className="cardFooterBtn" size="large">
-            Recurring Donation
-          </Button>
-        )}
+        
       </div>
       <div className="tierBenefits">
         {tier.benefits.map((offer) => (

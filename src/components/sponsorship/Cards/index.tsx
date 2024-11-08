@@ -39,12 +39,12 @@ const tierDetails = [
     name: "Gold",
     fee: 300,
     benefits: golderBenefits,
-    link: 'https://flutterwave.com/pay/dbrg5aydwqbn'
+    link: 'https://flutterwave.com/pay/basable-gold'
   },
   {
     name: "Donation",
-    fee: 300,
     benefits: [],
+    link: 'https://flutterwave.com/donate/uuvz683mqaz5'
   },
 ];
 
