@@ -30,3 +30,14 @@ body {
     }
   }
 }
+
+@media only screen and (max-width: 680px) {
+  .sponsorPage {
+    padding: 22px;
+    padding-right: 22px;
+    
+    .headerSection {
+      margin-top: 20px;
+    }
+  }
+}
